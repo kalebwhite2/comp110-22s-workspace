@@ -12,25 +12,17 @@ if len(search_letter) != 1:
     print("Error: Character must be a single character")
     exit()
 
+i: int = 0
 occurences: int = 0
 
 print("Searching for " + search_letter + " in " + word_to_check)
 
-if word_to_check[0] == search_letter:
-    print(search_letter + " found at index 0")
-    occurences = occurences + 1
-if word_to_check[1] == search_letter:
-    print(search_letter + " found at index 1")
-    occurences = occurences + 1
-if word_to_check[2] == search_letter:
-    print(search_letter + " found at index 2")
-    occurences = occurences + 1
-if word_to_check[3] == search_letter:
-    print(search_letter + " found at index 3")
-    occurences = occurences + 1
-if word_to_check[4] == search_letter:
-    print(search_letter + " found at index 4")
-    occurences = occurences + 1
+while i < len(word_to_check):
+    if word_to_check[i] == search_letter:
+        print(search_letter + " found at index " + str(i))
+        occurences = occurences + 1
+    i = i + 1
+
 
 if occurences == 0:
     print("No instances of " + search_letter + " found in " + word_to_check)

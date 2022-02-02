@@ -21,7 +21,7 @@ feedback: str = ""
 while i < len(secret_word):
     # correct letter in the correct place
     if secret_word[i] == guess[i]:
-        feedback = feedback + GREEN_BOX + " "
+        feedback = feedback + GREEN_BOX
     else:
         i0: int = 0
         wrong_place: bool = False
@@ -35,9 +35,9 @@ while i < len(secret_word):
             i0 = i0 + 1
         # these two parts of the then block are just reflecting if that guess letter was found 
         if wrong_place:
-            feedback = feedback + YELLOW_BOX + " "
+            feedback = feedback + YELLOW_BOX
         else:
-            feedback = feedback + WHITE_BOX + " "
+            feedback = feedback + WHITE_BOX
     i = i + 1
 
 print(feedback)
