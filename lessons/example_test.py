@@ -4,6 +4,7 @@ included in the project so that the Pytest plugin does not
 complain about not being able to discover any tests in our
 worksppace."""
 
+
 def square(x: int) -> int:
     """Squares the argument it is given."""
     return x * x

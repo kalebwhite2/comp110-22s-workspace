@@ -193,23 +193,23 @@ def p_rectangle(turtle: Turtle, x: float, y: float, h: float, w: float, d: float
     elif ad > 90:  # left side
         move(turtle, bl_x, bl_y)
 
-        o_bl_x: float = bl_x + d * math.cos(math.radians(ad))
-        o_bl_y: float = bl_y + d * math.sin(math.radians(ad))
-        o_tl_x: float = x + d * math.cos(math.radians(ad))
-        o_tl_y: float = y + d * math.sin(math.radians(ad))
-        o_tr_x: float = tr_x + d * math.cos(math.radians(ad))
-        o_tr_y: float = tr_y + d * math.sin(math.radians(ad))
+        o_bl_x_l: float = bl_x + d * math.cos(math.radians(ad))  # Outside, position on square, x or y coordinate, left side
+        o_bl_y_l: float = bl_y + d * math.sin(math.radians(ad))
+        o_tl_x_l: float = x + d * math.cos(math.radians(ad))
+        o_tl_y_l: float = y + d * math.sin(math.radians(ad))
+        o_tr_x_l: float = tr_x + d * math.cos(math.radians(ad))
+        o_tr_y_l: float = tr_y + d * math.sin(math.radians(ad))
 
         if fill:
             turtle.begin_fill()
-        turtle.goto(o_bl_x, o_bl_y)
-        turtle.goto(o_tl_x, o_tl_y)
-        turtle.goto(o_tr_x, o_tr_y)
+        turtle.goto(o_bl_x_l, o_bl_y_l)
+        turtle.goto(o_tl_x_l, o_tl_y_l)
+        turtle.goto(o_tr_x_l, o_tr_y_l)
         turtle.goto(tr_x, tr_y)
 
         move(turtle, x, y)
 
-        turtle.goto(o_tl_x, o_tl_y)
+        turtle.goto(o_tl_x_l, o_tl_y_l)
         if fill:
             turtle.end_fill()
 
